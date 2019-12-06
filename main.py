@@ -28,6 +28,7 @@ def getTime()->str:
     return "time: "+time
 
 
+#InsertString from parent class
 def InsertIntoRightDB(typeDB=DEFAULT_INTERACTER):
     # setting default value
     typeDB=(typeDB.lower(),DEFAULT_INTERACTER)[typeDB.lower() != "local" or typeDB.lower() != "gcp"]
