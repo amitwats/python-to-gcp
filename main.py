@@ -8,7 +8,7 @@ from datetime import datetime
 DEFAULT_INTERACTER="gcp"
 interacter=None
 
-
+# The main method
 def main():
     try:
         env=os.environ['INTERACTER']
@@ -16,9 +16,10 @@ def main():
         env=DEFAULT_INTERACTER
 
     interacter = (SQLiteInteracter(),GCPInteracter())[env=="gcp"]
-
-
     interacter.InsertString("String -- "+getTime())
+
+
+
 
 
 def getTime()->str:
@@ -30,11 +31,6 @@ def getTime()->str:
 def InsertIntoRightDB(typeDB=DEFAULT_INTERACTER):
     # setting default value
     typeDB=(typeDB.lower(),DEFAULT_INTERACTER)[typeDB.lower() != "local" or typeDB.lower() != "gcp"]
-
-    
-
-
-
 
 
 main()
